@@ -1,6 +1,6 @@
 package Task_04.pages;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +19,6 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id='new_user']")
     WebElement buttonInput;
     @FindBy(xpath = "//li[@class='parsley-type']")
-//    @FindBy(xpath = "//*[@id='parsley-id-5']")
     WebElement textError;
 
     public LoginPage(WebDriver driver, WebDriverWait wait) {
@@ -60,9 +59,6 @@ public class LoginPage {
 
     }
 
-//li[@class='parsley-type']
-
-//    (By.xpath("/html/body/div[2]/div[7]/div/form/div[2]/ul")).isEmpty());
 
 
 }

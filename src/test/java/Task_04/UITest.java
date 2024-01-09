@@ -32,18 +32,17 @@ public class UITest {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
-//        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://gb.ru/login");
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @Test
-    void testGBNotEmailLogin(){
+    void testGBNotEmailLogin() {
 
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.authorization(userEmail, userPassword);
@@ -53,7 +52,7 @@ public class UITest {
 
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshot, new File("src/main/resources/screen01.png"));
+            FileUtils.copyFile(screenshot, new File("src/main/resources/screen.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,7 +61,7 @@ public class UITest {
 
 
     @Test
-    void testGBWithoutPassword(){
+    void testGBWithoutPassword() {
 
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.inputNotPassword(email);
@@ -76,6 +75,5 @@ public class UITest {
         driver.quit();
 
     }
-
 
 }
